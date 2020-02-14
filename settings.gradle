@@ -1,0 +1,2 @@
+include ':app', ':awesome_library'
+rootProject.name='Test_Module_Lib'
