@@ -7,9 +7,10 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.map4d.awesome_library.Get_Smartcodes;
-import com.map4d.awesome_library.Model.Model_Smartcode_Data;
+import com.map4d.awesome_library.Model_Smartcode_Data;
+import com.map4d.awesome_library.SmartCodeLib;
 
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     Model_Smartcode_Data model_smartcode_data;
@@ -22,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         a = findViewById(R.id.a);
-        String v = Get_Smartcodes.getDataSmartcode(16.125234,108.12453);
-        a.setText("" + v);
+        JSONObject v = SmartCodeLib.getSmartcode(16.125234,108.12453);
+        a.setText("" + v.toString());
         Log.e("data", a +"");
 
         //Toast.makeText(getApplicationContext(),""+Get_Smartcodes.getDataSmartcode(16.235252,108.1242352).get(1),Toast.LENGTH_SHORT).show();

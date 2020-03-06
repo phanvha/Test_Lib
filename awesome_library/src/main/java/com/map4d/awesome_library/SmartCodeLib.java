@@ -15,16 +15,16 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Get_Smartcodes {
+public class SmartCodeLib {
     public static Context context;
 
     public static Model_Smartcode_Data model_smartcode_data;
     public static JSONObject object;
-    public static JSONObject getDataSmartcode (Double latitude, Double longitude) {
+    public static JSONObject getSmartcode (Double latitude, Double longitude) {
 
         String latlng = latitude+","+longitude;
         API_Smartcode_Interface service = API_Smartcode.getClient2().create(API_Smartcode_Interface.class);
-        retrofit2.Call<Model_Smartcode_Data> userCall = service.getSmartcodeData(latlng);
+        retrofit2.Call<Model_Smartcode_Data> userCall = service.getSmartcodeData(latlng,"v1.0");
         userCall.enqueue(new Callback<Model_Smartcode_Data>() {
             @Override
             public void onResponse(Call<Model_Smartcode_Data> call, Response<Model_Smartcode_Data> response) {

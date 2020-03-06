@@ -5,15 +5,18 @@ import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface API_Smartcode_Interface {
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("/v1.0/api/smartcodes")
+    @GET("/{version}/api/smartcodes")
     Call<Model_Smartcode_Data> getSmartcodeData(
-            @Query("location") String location
+            @Query("location") String location,
+            @Part("version") String version
 
     );
+
 }
