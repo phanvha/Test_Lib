@@ -33,8 +33,9 @@ public class Get_Smartcodes {
                     //min
                     JSONObject min = new JSONObject();
                     try {
-                        min.put("lat", response.body().getResults().getMin().getLatitude());
                         min.put("lng", response.body().getResults().getMin().getLongitude());
+                        min.put("lat", response.body().getResults().getMin().getLatitude());
+
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -42,8 +43,9 @@ public class Get_Smartcodes {
                     //max
                     JSONObject max = new JSONObject();
                     try {
-                        max.put("lat", response.body().getResults().getMax().getLatitude());
                         max.put("lng", response.body().getResults().getMax().getLongitude());
+                        max.put("lat", response.body().getResults().getMax().getLatitude());
+
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -51,8 +53,9 @@ public class Get_Smartcodes {
                     //location
                     JSONObject location = new JSONObject();
                     try {
-                        location.put("lat", response.body().getResults().getLocation().getLatitude());
                         location.put("lng", response.body().getResults().getLocation().getLongitude());
+                        location.put("lat", response.body().getResults().getLocation().getLatitude());
+
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
@@ -60,8 +63,9 @@ public class Get_Smartcodes {
                     //center
                     JSONObject center = new JSONObject();
                     try {
-                        center.put("lat", response.body().getResults().getCenter().getLatitude());
                         center.put("lng", response.body().getResults().getCenter().getLongitude());
+                        center.put("lat", response.body().getResults().getCenter().getLatitude());
+
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
