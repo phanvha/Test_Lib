@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface API_Smartcode_Interface {
@@ -14,8 +15,8 @@ public interface API_Smartcode_Interface {
     })
     @GET("/{version}/api/smartcodes")
     Call<Model_Smartcode_Data> getSmartcodeData(
-            @Query("location") String location,
-            @Part("version") String version
+            @Path("version") String version,
+            @Query("location") String location
 
     );
 

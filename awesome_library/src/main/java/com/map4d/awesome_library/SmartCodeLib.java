@@ -23,8 +23,9 @@ public class SmartCodeLib {
     public static JSONObject getSmartcode (Double latitude, Double longitude) {
 
         String latlng = latitude+","+longitude;
+        String versionAPI = "v1.0";
         API_Smartcode_Interface service = API_Smartcode.getClient2().create(API_Smartcode_Interface.class);
-        retrofit2.Call<Model_Smartcode_Data> userCall = service.getSmartcodeData(latlng,"v1.0");
+        retrofit2.Call<Model_Smartcode_Data> userCall = service.getSmartcodeData(versionAPI, latlng);
         userCall.enqueue(new Callback<Model_Smartcode_Data>() {
             @Override
             public void onResponse(Call<Model_Smartcode_Data> call, Response<Model_Smartcode_Data> response) {
