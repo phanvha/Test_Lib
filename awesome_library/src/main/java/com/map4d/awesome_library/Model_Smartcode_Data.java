@@ -1,4 +1,4 @@
-package com.map4d.awesome_library.Model;
+package com.map4d.awesome_library;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

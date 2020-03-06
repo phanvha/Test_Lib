@@ -4,7 +4,10 @@ package com.map4d.awesome_library;
 import android.content.Context;
 import android.util.Log;
 
-import com.map4d.awesome_library.Model.Model_Smartcode_Data;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+import org.json.JSONObject;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -15,8 +18,8 @@ public class Get_Smartcodes {
     public static Context context;
 
     public static Model_Smartcode_Data model_smartcode_data;
-    public static String data;
-    public static String getDataSmartcode (Double latitude, Double longitude) {
+    public static JsonObject data;
+    public static Model_Smartcode_Data getDataSmartcode (Double latitude, Double longitude) {
 
         String latlng = latitude+","+longitude;
         API_Smartcode_Interface service = API_Smartcode.getClient2().create(API_Smartcode_Interface.class);
@@ -24,24 +27,17 @@ public class Get_Smartcodes {
         userCall.enqueue(new Callback<Model_Smartcode_Data>() {
             @Override
             public void onResponse(Call<Model_Smartcode_Data> call, Response<Model_Smartcode_Data> response) {
-                //onSignupSuccess();
-                if (response.isSuccessful()) {
-                    if (response.body()!=null){
-                        Log.d("DataSmartCode", ""+response.body());
-                        data = response.body().getResults().getSmartCode();
-
-
-                    }
-                }else {
-                    Log.d("DataSmartCode", "null");
+                if (response.isSuccessful()){
+                    model_smartcode_data = response.body();
                 }
             }
+
             @Override
             public void onFailure(Call<Model_Smartcode_Data> call, Throwable t) {
-                Log.d("Failed: ", t.toString());
+
             }
         });
-        return data;
+        return model_smartcode_data;
     }
     public static int x(int a, int b){
         return a+b;
