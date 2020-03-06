@@ -57,22 +57,6 @@ public class Get_Smartcodes {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
-                    //compoundCode
-                    JSONObject compoundCode = new JSONObject();
-                    try {
-                        compoundCode.put("compoundCode", response.body().getResults().getCompoundCode());
-                    } catch (JSONException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                    //smartcodes
-                    JSONObject smartcodes = new JSONObject();
-                    try {
-                        smartcodes.put("smartCode", response.body().getResults().getSmartCode());
-                    } catch (JSONException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
                     //center
                     JSONObject center = new JSONObject();
                     try {
@@ -89,8 +73,8 @@ public class Get_Smartcodes {
                         result.put("min", min);
                         result.put("max", max);
                         result.put("location", location);
-                        result.put("compoundCode", compoundCode);
-                        result.put("smartCode", smartcodes);
+                        result.put("compoundCode", response.body().getResults().getCompoundCode());
+                        result.put("smartCode", response.body().getResults().getSmartCode());
                         result.put("center", center);
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
