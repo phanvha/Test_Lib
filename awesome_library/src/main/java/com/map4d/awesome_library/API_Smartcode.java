@@ -1,4 +1,4 @@
-package com.map4d.awesome_library.API_Smartcodes;
+package com.map4d.awesome_library;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
